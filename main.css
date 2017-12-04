@@ -1,0 +1,43 @@
+body {
+  background-color: black !important;
+  color: white !important;
+}
+
+#directions {
+  color: white !important;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+#canvas {
+  margin-top: 10px;
+  background: #000;
+  border: 1px white solid;
+}
+
+#scoreHolder {
+  font-size: 15px;
+}
+
+#reset {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+}
+
+/* 押されたら周り青のあれが出ないように */
+#reset:focus {
+  outline: 0;
+}
+
+#dPad {
+  padding: 3px;
+  margin-left: 0px;
+}
+
+.dPadButton {
+  color: black !important;
+  text-decoration: none;
+  font-size: 25px;
+}

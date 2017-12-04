@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>escape</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css" media="screen"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="directions" class="col-lg-2 hidden-xs">
+          Enter key: start<br/>
+          Arrow keys: move<br/>
+          Space bar: stop player<br/>
+          r: reset<br/>
+        </div>
+        <div class="col-lg-6 col-xs-12">
+          <canvas id="canvas" ontouchstart="startGame();" width="750" height="480" style="text-align: center;"></canvas>
+        </div>
+        <div class="col-lg-3 hidden-xs"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2 hidden-xs"></div>
+        <span id="scoreHolder" class="col-lg-1 hidden-xs">Score: <span id="score"></span></span>
+        <span id="levelHolder" class="col-lg-1 hidden-xs">Level: <span id="level"></span></span>
+        <div class="col-lg-1 hidden-xs"></div>
+
+        <div id="dPad" class="col-xs-8 hidden-lg">
+          <div id="top" class="text-center">
+            <button class="dPadButton" onclick="window.event.keyCode = 38; change_direction_of(hero, this);" ontouchstart="hero['direction'] = 38; change_direction_of(hero, this);" id="up">&nbsp;↑&nbsp;</button>
+          </div>
+          <div id="mid" class="text-center">
+            <button class="dPadButton" onclick="window.event.keyCode = 37; change_direction_of(hero, false);" ontouchstart="hero['direction'] = 37; change_direction_of(hero, this);" id="left">←</button>
+            <span>　</span>
+            <button class="dPadButton" onclick="window.event.keyCode = 39; change_direction_of(hero, false);" ontouchstart="hero['direction'] = 39; change_direction_of(hero, this);" id="right">→</button>
+          </div>
+          <div id="bottom" class="text-center">
+            <button class="dPadButton" onclick="window.event.keyCode = 40; change_direction_of(hero, false);" ontouchstart="hero['direction'] = 40; change_direction_of(hero, this);" id="down">&nbsp;↓&nbsp;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="padding-top: 10px;">
+        <span class="col-lg-5 col-xs-1"></span>
+        <button id="reset" class="col-lg-2 hidden-xs" onclick="resetGame();">Reset</button>
+        <span class="col-lg-5 col-xs-2"></span>
+      </div>
+    </div>
+    
+    <script src="main.js"></script>
+  </body>
+</html>
